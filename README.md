@@ -90,21 +90,6 @@ rails generate model PhoneNumber number:string contact_id:integer contact_type:s
 
     add_index :phone_numbers, :contact_id
 
-
-## Testing in rails console
-
-    Person.create(first_name: 'John')
-    PhoneNumber.create(contact: Person.first, number: '1234567890')
-
-    Person.create(first_name: 'Shaun')
-    PhoneNumber.create(contact: Person.find(2), number: '07496547368')
-
-    Company.create(company_name: 'Food Company')
-    PhoneNumber.create(contact: Company.first, number: '04277836021')
-
-    Company.create(company_name: 'Car Company')
-    PhoneNumber.create(contact: Company.find(2), number: '04277836021')
-
 # Usage in the views
 
     Assuming we have an instance of these classes  @phone_number, @person, or @company:
@@ -127,11 +112,11 @@ rails generate model PhoneNumber number:string contact_id:integer contact_type:s
 
 ## Testing in rails console
 
-    Person.create(first_name: 'John', last_name: 'Fahey')
+    Person.create(first_name: 'Jake', last_name: 'Black')
     PhoneNumber.create(contact: Person.first, number: '0101567891')
     PhoneNumber.create(contact: Person.first, number: '0101476325')
 
-    Person.create(first_name: 'Shaun', last_name: 'Fahey')
+    Person.create(first_name: 'Roger', last_name: 'Red')
     PhoneNumber.create(contact: Person.find(2), number: '0202346268')
     PhoneNumber.create(contact: Person.find(2), number: '0202951694')
 
